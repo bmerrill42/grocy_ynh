@@ -89,6 +89,8 @@ phpversion=$(ynh_app_setting_get --app="$app" --key=phpversion)
 cp -a ../conf/config-dist.php "$final_path/data/config.php"
 
 ynh_replace_string --match_string="__LANGUAGE__" --replace_string="$language" --target_file="$final_path/data/config.php"
+ynh_replace_string --match_string="__DOMAIN__" --replace_string="$domain" --target_file="$final_path/data/config.php"
+ynh_replace_string --match_string="__PATH__" --replace_string="$path_url" --target_file="$final_path/data/config.php"
 
 #=================================================
 # STORE THE CONFIG FILE CHECKSUM
